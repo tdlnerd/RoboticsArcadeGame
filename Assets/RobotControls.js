@@ -1,4 +1,4 @@
-﻿ #pragma strict
+﻿
  
  
  
@@ -10,30 +10,26 @@
  {
  
      MoveForward(); // Player Movement
-     TurnRightAndLeft();//Player Turning
  }
  
  function MoveForward()
  {
- 
-     if(Input.GetKey("up"))//Press up arrow key to move forward on the Y AXIS
+     if(Input.GetKey("down"))//Press up arrow key to move forward on the Y AXIS
      {
-         transform.Translate(Vector2(0,playerSpeed * Time.deltaTime));
+         transform.Translate(Vector2.right * Time.deltaTime * playerSpeed);
+         transform.rotation = Quaternion.Euler(0,0,-90);
+     }
+     if(Input.GetKey("left"))//Press up arrow key to move forward on the Y AXIS
+     {
+         transform.Translate(Vector2.right * Time.deltaTime * playerSpeed);
+         transform.rotation = Quaternion.Euler(180,0,180);
+     }
+     if(Input.GetKey("right"))//Press up arrow key to move forward on the Y AXIS
+     {
+         transform.Translate(Vector2.right * Time.deltaTime * playerSpeed);
+         transform.rotation = Quaternion.Euler(0,0,0);
      }
  
  }
  
- function TurnRightAndLeft()
- {
  
-     if(Input.GetKey("right")) //Right arrow key to turn right
-     {
-         transform.Rotate(-Vector3.forward *turnSpeed* Time.deltaTime);
-     }
- 
-     if(Input.GetKey("left"))//Left arrow key to turn left
-     {
-         transform.Rotate(Vector3.forward *turnSpeed* Time.deltaTime);
-     }
- 
- }
