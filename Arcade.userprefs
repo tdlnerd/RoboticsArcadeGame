@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ArmControl.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Damage.js">
     <Files>
-      <File FileName="Assets/DestroyBlock.js" Line="8" Column="25" />
-      <File FileName="Assets/RobotControls.js" Line="17" Column="5" />
-      <File FileName="Assets/Turn.js" Line="5" Column="63" />
-      <File FileName="Assets/Control 2.js" Line="1" Column="1" />
-      <File FileName="Assets/ArmControl.js" Line="18" Column="7" />
+      <File FileName="Assets/Scripts/DestroyBlock.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ArmControl.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/RobotControls.js" Line="23" Column="60" />
+      <File FileName="Assets/Scripts/WheelJump.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Damage.js" Line="6" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
