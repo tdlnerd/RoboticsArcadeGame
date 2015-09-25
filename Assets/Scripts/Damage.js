@@ -1,9 +1,10 @@
 ﻿var Sparks : GameObject;
 var DamageBar : UI.Slider;
 var Damagevar : Var;
-
+var Die : AudioClip;
 function Start () {
-Damagevar.Damage = 100;
+Systemvar = GameObject.Find("Varsystem");
+Damagevar = Systemvar.GetComponent(Var);
 }
 function OnTriggerEnter2D (hit : Collider2D) {
  	if (hit.gameObject.tag == "Water") {
@@ -13,14 +14,28 @@ function OnTriggerEnter2D (hit : Collider2D) {
  	}
 }
 
+function OnCollisionEnter2D (hitcol: Collision2D) {
+if (hitcol.gameObject.tag == "Rock") {
+ 	Damagevar.Damage -= 10;
+ 	transform.localScale.y = 0.1;
+ 	yield WaitForSeconds (0.1);
+ 	transform.localScale.y = 0.5;
+ 	}
+ }
 function Update () {
-	if (DamageBar.value == 0) {
-	Destroy(gameObject);
-}
+	if (Damagevar.Damage < 1) {
+	Damagevar.Live -= 1;
+	GetComponent.<AudioSource>().PlayOneShot(Die);
+	Damagevar.Damage = 100;
+	transform.position = Vector2(25.14001,-3.5);
+	}
+	if (Damagevar.Live < 1) {
+	Application.LoadLevel("GameOver");
+	}
 }
 
 function TakeDamageWater () {
-Damagevar.Damage -= 2;
+Damagevar.Damage -= 3;
 }
 
 function OnTriggerExit2D (hit: Collider2D) {

@@ -10,6 +10,7 @@ namespace UnityStandardAssets._2D
         public float lookAheadFactor = 3;
         public float lookAheadReturnSpeed = 0.5f;
         public float lookAheadMoveThreshold = 0.1f;
+		public GameObject robot;
 
         private float m_OffsetZ;
         private Vector3 m_LastTargetPosition;
@@ -22,6 +23,8 @@ namespace UnityStandardAssets._2D
             m_LastTargetPosition = target.position;
             m_OffsetZ = (transform.position - target.position).z;
             transform.parent = null;
+			robot = GameObject.Find("RobotBase");
+			target = robot.transform;
         }
 
 
