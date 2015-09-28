@@ -1,11 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Var.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SpawnAIGem.js">
     <Files>
-      <File FileName="Assets/Scripts/DestroyBlock.js" Line="14" Column="2" />
-      <File FileName="Assets/Scripts/LevelManager.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Damage.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Var.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Spawn Ore.js" Line="60" Column="1" />
+      <File FileName="Assets/SpawnAIGem.js" Line="6" Column="55" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

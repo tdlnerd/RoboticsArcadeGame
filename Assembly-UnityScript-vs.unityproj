@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{96829162-DE5C-7F11-9641-B41EDCEA5DB3}</ProjectGuid>
+	<ProjectGuid>{1CE57096-6481-C0C3-DC99-7A91CF3DC102}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,33 +46,39 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Rock.js" />
      <Compile Include="Assets\Scripts\ArmControl.js" />
      <Compile Include="Assets\Scripts\Control 2.js" />
      <Compile Include="Assets\Scripts\Damage.js" />
      <Compile Include="Assets\Scripts\DestroyBlock.js" />
+     <Compile Include="Assets\Scripts\DestroyBlockAI.js" />
+     <Compile Include="Assets\Scripts\GenericAI.js" />
+     <Compile Include="Assets\Scripts\Highscore.js" />
      <Compile Include="Assets\Scripts\LevelManager.js" />
      <Compile Include="Assets\Scripts\LoadFix.js" />
+     <Compile Include="Assets\Scripts\LoadScene.js" />
      <Compile Include="Assets\Scripts\RobotControls.js" />
+     <Compile Include="Assets\Scripts\Rock.js" />
+     <Compile Include="Assets\Scripts\Spawn Ore.js" />
      <Compile Include="Assets\Scripts\Turn.js" />
+     <Compile Include="Assets\Scripts\TurnLocal.js" />
      <Compile Include="Assets\Scripts\Var.js" />
+     <Compile Include="Assets\Scripts\WaterBall.js" />
      <Compile Include="Assets\Scripts\WheelJump.js" />
-     <Compile Include="Assets\Spawn Ore.js" />
-     <Compile Include="Assets\WaterBall.js" />
-     <Compile Include="Assets\ZoombaAI.js" />
+     <Compile Include="Assets\Scripts\ZoombaAI.js" />
+     <Compile Include="Assets\SpawnAIGem.js" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
- <Reference Include="UnityEngine.Analytics">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.UI">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -80,7 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
-      <Project>{5063051A-7108-922D-8944-FD043C987A27}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+      <Project>{FF8F6B35-6478-4895-C0FA-202D5817DACD}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
