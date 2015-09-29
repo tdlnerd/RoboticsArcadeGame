@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SpawnAIGem.js">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../MT/Assets/Placement Scripts/MovePreassigned.js">
     <Files>
-      <File FileName="Assets/Scripts/Spawn Ore.js" Line="60" Column="1" />
-      <File FileName="Assets/SpawnAIGem.js" Line="6" Column="55" />
+      <File FileName="../MT/Assets/Placement Scripts/MovePreassigned.js" Line="13" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
