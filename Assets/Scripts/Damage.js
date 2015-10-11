@@ -2,6 +2,7 @@
 var DamageBar : UI.Slider;
 var Damagevar : Var;
 var Die : AudioClip;
+var GenSound : AudioClip;
 function Start () {
 Systemvar = GameObject.Find("Varsystem");
 Damagevar = Systemvar.GetComponent(Var);
@@ -21,7 +22,17 @@ if (hitcol.gameObject.tag == "Rock") {
  	yield WaitForSeconds (0.1);
  	transform.localScale.y = 0.5;
  	}
+if (hitcol.gameObject.tag == "Spark") {
+	Damagevar.Damage -= 5;
  }
+ if (hitcol.gameObject.tag == "GenericDamage") {
+	Damagevar.Damage -= 8;
+	GetComponent.<AudioSource>().PlayOneShot(GenSound);
+ }
+ if (hitcol.gameObject.tag == "WB") {
+	Damagevar.Damage -= 10;
+ }
+}
 function Update () {
 	if (Damagevar.Damage < 1) {
 	Damagevar.Live -= 1;
@@ -30,7 +41,7 @@ function Update () {
 	transform.position = Vector2(25.14001,-3.5);
 	}
 	if (Damagevar.Live < 1) {
-	Application.LoadLevel("GameOver");
+	Destroy(gameObject);
 	}
 }
 

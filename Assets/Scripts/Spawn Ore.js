@@ -12,23 +12,39 @@ var L2YMin = -21;
 var L2YMax = -46;
 var L3YMin = -48;
 var L3YMax = -60;
+var C1 : Material;
+var C2 : Material;
+var C3 : Material;
+var C4 : Material;
 var RoundChecker : Var;
 function Start () {
 Man = GameObject.Find("Varsystem");
 RoundChecker = Man.GetComponent(Var);
+	if  (RoundChecker.Round < 6) {
+	RenderSettings.skybox = C1;
+	}
+	if  (RoundChecker.Round < 11 && RoundChecker.Round > 5) {
+	RenderSettings.skybox = C2;
+	}
+	if  (RoundChecker.Round < 16 && RoundChecker.Round > 12) {
+	RenderSettings.skybox = C3;
+	}
+	if  (RoundChecker.Round > 17) {
+	RenderSettings.skybox = C4;
+	}
 	if (RoundChecker.Round < 10) {
-	InvokeRepeating("GemL1",0,(0.5 / RoundChecker.Round));
-	InvokeRepeating("EnemyL1",0,(2 / RoundChecker.Round));
+	InvokeRepeating("GemL1",0,(0.125 / RoundChecker.Round));
+	InvokeRepeating("EnemyL1",0,(0.25 / RoundChecker.Round));
 	yield WaitForSeconds(1);
 	CancelInvoke("GemL1");
 	CancelInvoke("EnemyL1");
-	InvokeRepeating("GemL2",0,(1 / RoundChecker.Round));
-	InvokeRepeating("EnemyL2",0,(3 / RoundChecker.Round));
+	InvokeRepeating("GemL2",0,(0.25 / RoundChecker.Round));
+	InvokeRepeating("EnemyL2",0,(0.5 / RoundChecker.Round));
 	yield WaitForSeconds(0.5);
 	CancelInvoke("GemL2");
 	CancelInvoke("EnemyL2");
-	InvokeRepeating("GemL3",0, (2 / RoundChecker.Round));
-	InvokeRepeating("EnemyL3",0,(4 / RoundChecker.Round));
+	InvokeRepeating("GemL3",0, (0.5 / RoundChecker.Round));
+	InvokeRepeating("EnemyL3",0,(0.75 / RoundChecker.Round));
 	yield WaitForSeconds(0.25);
 	CancelInvoke("GemL3");
 	CancelInvoke("EnemyL3");
@@ -40,12 +56,16 @@ RoundChecker = Man.GetComponent(Var);
 	CancelInvoke("GemL1");
 	CancelInvoke("EnemyL1");
 	InvokeRepeating("GemL2",0,0.1);
+	InvokeRepeating("EnemyL2",0,(1 / 20));
 	yield WaitForSeconds(0.5);
 	CancelInvoke("GemL2");
+	CancelInvoke("EnemyL2");
 	InvokeRepeating("GemL3",0,0.2);
+	InvokeRepeating("EnemyL3",0,(0.5 / 20));
 	yield WaitForSeconds(0.25);
 	CancelInvoke("GemL3");
-	} 
+	CancelInvoke("EnemyL3");
+	}
 }
 
 

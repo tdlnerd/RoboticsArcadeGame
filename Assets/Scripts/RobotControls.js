@@ -4,7 +4,6 @@ var rb: Rigidbody2D;
  var turnSpeed : float = 100; // speed player turns
  var thrust: float;
  var jump = true;
- 
  function Update () 
  {
  
@@ -15,8 +14,7 @@ var rb: Rigidbody2D;
  {
  	if(Input.GetKeyDown("up") && jump == true)//Press up arrow key to move forward on the Y AXIS
      {
-         rb.AddForce(transform.up * thrust);
-         transform.rotation = Quaternion.Euler(180,0,180);
+      Jump();
      }
      if(Input.GetKey("down"))//Press up arrow key to move forward on the Y AXIS
      {
@@ -35,6 +33,12 @@ var rb: Rigidbody2D;
      }
  
  }
+ 
+ function Jump() {
+ jump = false;
+ rb.AddForce(transform.up * thrust);
+         transform.rotation = Quaternion.Euler(180,0,180);
+}
  
  
  

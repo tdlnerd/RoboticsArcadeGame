@@ -1,14 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Var.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RobotControls.js">
     <Files>
-      <File FileName="Assets/Scripts/Var.js" Line="17" Column="21" />
-      <File FileName="Assets/Scripts/Damage.js" Line="7" Column="41" />
-      <File FileName="Assets/Scripts/DestroyBlock.js" Line="1" Column="1" />
-      <File FileName="Assets/ZoombaAI.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LoadFix.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelManager.js" Line="1" Column="1" />
-      <File FileName="Assets/Rock.js" Line="1" Column="1" />
+      <File FileName="Assets/ReloadTS.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/WheelJump.js" Line="12" Column="4" />
+      <File FileName="Assets/Scripts/RobotControls.js" Line="40" Column="59" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
