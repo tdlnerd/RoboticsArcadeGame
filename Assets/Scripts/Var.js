@@ -15,6 +15,9 @@ var UploadT = false;
 var NoMore = false;
 var Name : UI.Text;
 var highscoreUrl= "http://files.helloben.co/cashdirt_server/insert";
+var CheckName : UI.InputField;
+var RandomName : String[];
+var ULMessage : UI.Text;
 
 function Awake () {
 DontDestroyOnLoad (gameObject);
@@ -25,8 +28,17 @@ DontDestroyOnLoad (gameObject);
 }	
 
 function Update () {
+	if (Application.loadedLevelName == "BoothEnd") {
+	Destroy(gameObject);
+	return;
+	}
 ScoreBox.text = Score.ToString();
+if (Application.loadedLevelName == "BoothArcade") {
+	RoundBox.text = "Booth";
+	}
+	else {
 RoundBox.text = Round.ToString();
+}
 DamageBar.value = Damage;
 LiveBox.text = Live.ToString();
 	if (Live < 1 &&  NoMore == false) {	
@@ -36,8 +48,11 @@ LiveBox.text = Live.ToString();
 	}
 
 function Start () {
+ULMessage.text = "";
 Round = 1;
-Live = 3;
+if (Application.loadedLevelName == "BoothArcade") {
+Live = 1;
+}
 Damage = 100;
 Siteurl = WWW("http://files.helloben.co/cashdirt_server/view");
 yield Siteurl;
@@ -56,6 +71,11 @@ HSBox.text = tname + "  " + tscore;
 }
 
 function Upload() {
+	if (CheckName.text == "") {
+	CheckName.text = RandomName[Random.Range(0,RandomName.length)] + Random.Range(10,99).ToString();
+	Debug.Log(CheckName.text);
+	}
+ULMessage.text = Name.text + " , your score is uploading";
 NoMore = true;
 UploadT = true;
 var form = new WWWForm();
@@ -68,12 +88,14 @@ yield www;
 if (www.error == null)
 {
     Debug.Log("No Error");
+    yield WaitForSeconds (2);
     Destroy(gameObject);
 Application.LoadLevel("GameOver");
 } else {
     // something wrong!
+    yield WaitForSeconds (2);
     Debug.Log("WWW Error: "+ www.error);
 Destroy(gameObject);
-Application.LoadLevel("GameOver");
+Application.LoadLevel("BoothEnd");
 }
 }

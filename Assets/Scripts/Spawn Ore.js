@@ -12,6 +12,12 @@ var L2YMin = -21;
 var L2YMax = -46;
 var L3YMin = -48;
 var L3YMax = -60;
+var L4YMin = -61;
+var L4YMax = -76;
+var L5YMin = -80;
+var L5YMax = -100;
+var L6YMin = -105;
+var L6YMax = -115;
 var C1 : Material;
 var C2 : Material;
 var C3 : Material;
@@ -33,39 +39,23 @@ RoundChecker = Man.GetComponent(Var);
 	RenderSettings.skybox = C4;
 	}
 	if (RoundChecker.Round < 10) {
-	InvokeRepeating("GemL1",0,(0.125 / RoundChecker.Round));
-	InvokeRepeating("EnemyL1",0,(0.25 / RoundChecker.Round));
+	InvokeRepeating("GemL1",0,(0.1 / RoundChecker.Round));
+	InvokeRepeating("EnemyL1",0, (2 / RoundChecker.Round));
 	yield WaitForSeconds(1);
 	CancelInvoke("GemL1");
 	CancelInvoke("EnemyL1");
-	InvokeRepeating("GemL2",0,(0.25 / RoundChecker.Round));
-	InvokeRepeating("EnemyL2",0,(0.5 / RoundChecker.Round));
+	InvokeRepeating("GemL2",0, (0.05 / RoundChecker.Round));
+	InvokeRepeating("EnemyL2",0,(1 / RoundChecker.Round));
 	yield WaitForSeconds(0.5);
 	CancelInvoke("GemL2");
 	CancelInvoke("EnemyL2");
-	InvokeRepeating("GemL3",0, (0.5 / RoundChecker.Round));
-	InvokeRepeating("EnemyL3",0,(0.75 / RoundChecker.Round));
+	InvokeRepeating("GemL3",0, (0.025 / RoundChecker.Round));
+	InvokeRepeating("EnemyL3",0,(0.5 / RoundChecker.Round));
 	yield WaitForSeconds(0.25);
 	CancelInvoke("GemL3");
 	CancelInvoke("EnemyL3");
 	}
-	if (RoundChecker.Round > 9) {
-	InvokeRepeating("GemL1",0,0.05);
-	InvokeRepeating("EnemyL1",0,(2 / 20));
-	yield WaitForSeconds(1);
-	CancelInvoke("GemL1");
-	CancelInvoke("EnemyL1");
-	InvokeRepeating("GemL2",0,0.1);
-	InvokeRepeating("EnemyL2",0,(1 / 20));
-	yield WaitForSeconds(0.5);
-	CancelInvoke("GemL2");
-	CancelInvoke("EnemyL2");
-	InvokeRepeating("GemL3",0,0.2);
-	InvokeRepeating("EnemyL3",0,(0.5 / 20));
-	yield WaitForSeconds(0.25);
-	CancelInvoke("GemL3");
-	CancelInvoke("EnemyL3");
-	}
+
 }
 
 
@@ -89,6 +79,27 @@ clone.transform.position.x = Random.Range(L1XMin, L1XMax);
 clone.transform.position.y = Random.Range(L3YMin, L3YMax);
 }
 
+function GemL4 () {
+l4choice = Random.Range(0,Level3Ore.length);
+clone = Instantiate(Level3Ore[l4choice]);
+clone.transform.position.x = Random.Range(L1XMin, L1XMax);
+clone.transform.position.y = Random.Range(L4YMin, L4YMax);
+}
+
+function GemL5 () {
+l5choice = Random.Range(0,Level3Ore.length);
+clone = Instantiate(Level3Ore[l5choice]);
+clone.transform.position.x = Random.Range(L1XMin, L1XMax);
+clone.transform.position.y = Random.Range(L5YMin, L5YMax);
+}
+
+function GemL6 () {
+l6choice = Random.Range(0,Level3Ore.length);
+clone = Instantiate(Level3Ore[l6choice]);
+clone.transform.position.x = Random.Range(L1XMin, L1XMax);
+clone.transform.position.y = Random.Range(L6YMin, L6YMax);
+}
+
 function EnemyL1 () {
 e1choice = Random.Range(0,L1Enemy.length);
 clone = Instantiate(L1Enemy[e1choice]);
@@ -109,3 +120,11 @@ clone = Instantiate(L3Enemy[e3choice]);
 clone.transform.position.x = Random.Range(L1XMin, L1XMax);
 clone.transform.position.y = Random.Range(L3YMin, L3YMax);
 }
+
+function EnemyL4 () {
+e4choice = Random.Range(0,L3Enemy.length);
+clone = Instantiate(L3Enemy[e4choice]);
+clone.transform.position.x = Random.Range(L1XMin, L1XMax);
+clone.transform.position.y = Random.Range(L4YMin, L4YMax);
+}
+

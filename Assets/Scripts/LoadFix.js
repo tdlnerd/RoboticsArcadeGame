@@ -8,6 +8,11 @@ DontDestroyOnLoad (gameObject);
 }	
 function Update () {
 	if (Check.Live < 1) {
-	Destroy(gameObject);
+	Destroy();
 	}
+}
+
+function Destroy () {
+yield WaitForSeconds(2);
+Destroy(gameObject);
 }
